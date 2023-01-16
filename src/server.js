@@ -3,12 +3,12 @@ const Hapi = require("@hapi/hapi");
 
 // album
 const albums = require('./api/albums');
-const AlbumService = require('./service/AlbumService');
+const AlbumService = require('./service/postgres/AlbumsService');
 const AlbumValidator = require('./validator/albums');
 
 // song
 const songs = require('./api/songs');
-const SongService = require('./service/SongService');
+const SongService = require('./service/postgres/SongsService');
 const SongValidator = require('./validator/songs');
 
 const init = async () => {
