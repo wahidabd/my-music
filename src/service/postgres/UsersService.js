@@ -83,4 +83,4 @@ class UsersService {
 
 }
 
-module.require = UsersService;
+module.exports = UsersService;

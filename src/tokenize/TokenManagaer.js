@@ -1,6 +1,5 @@
 const Jwt = require('@hapi/jwt');
 const InvariantError = require('../exception/InvariantError');
-const {ref} = require("joi");
 
 const TokenManager = {
     generateAccessToken(payload) {
@@ -16,7 +15,7 @@ const TokenManager = {
             const artifacts = Jwt.token.decode(refreshToken);
             Jwt.token.verifySignature(artifacts, process.env.REFRESH_TOKEN_KEY);
 
-            const {payload} = Jwt.token.decode(refreshToken);
+            const {payload} = artifacts.decoded;
             return payload;
         }catch (error){
             throw new InvariantError('Invalid refresh token')
