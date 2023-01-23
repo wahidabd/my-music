@@ -46,7 +46,7 @@ class AlbumsService {
         }
 
         const album = albumResult.rows[0];
-        const song = songResult.rows.length ? songResult.rows : null;
+        const song = songResult.rows;
         return {
             id: album.id,
             name: album.name,
